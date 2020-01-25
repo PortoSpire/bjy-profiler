@@ -1,15 +1,16 @@
 {
-    "name": "andrey-mokhov/bjy-profiler",
-    "description": "Database profiler for Zend\\Db (also plugin for ZendDeveloperTools). Module forked from bjyoungblood/bjy-profiler",
+    "name": "portospire/bjy-profiler",
+    "description": "Database profiler for Laminas\\Db (also plugin for LaminasDeveloperTools). Module forked from andrey-mokhov/bjy-profiler",
     "type": "library",
     "license": "MIT",
     "keywords": [
         "zf3",
         "db",
         "profiler",
-        "zdt"
+        "zdt",
+        "laminas"
     ],
-    "homepage": "https://github.com/andrey-mokhov/BjyProfiler",
+    "homepage": "https://github.com/PortoSpire/BjyProfiler",
     "authors": [
         {
             "name": "Ben Youngblood",
@@ -20,14 +21,19 @@
             "name": "Andrey N. Mokhov",
             "email": "github@mokhov.com",
             "homepage": "https://github.com/andrey-mokhov"
+        },
+        {
+            "name": "PortoSpire",
+            "email": "psorders@portospire.com",
+            "homepage": "https://portospire.github.io"
         }
     ],
     "require": {
         "php": "^5.5 || ^7.0",
-        "zendframework/zend-servicemanager": "^3.0.3",
-        "zendframework/zend-modulemanager": "^2.7",
-        "zendframework/zend-db": "^2.7",
-        "zendframework/zend-log": "^2.7"
+        "laminas/laminas-servicemanager": "^3.0.3",
+        "laminas/laminas-modulemanager": "^2.7",
+        "laminas/laminas-db": "^2.7",
+        "laminas/laminas-log": "^2.7"
     },
     "autoload": {
         "psr-4": {
@@ -42,6 +48,6 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^4.0 || ^5.0",
-        "zendframework/zend-mvc": "^2.7 || ^3.0"
+        "laminas/laminas-mvc": "^2.7 || ^3.0"
     }
 }
