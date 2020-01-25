@@ -5,10 +5,10 @@ namespace BjyProfilerTest\Db\Profiler;
 use BjyProfiler\Db\Profiler\Profiler;
 use BjyProfiler\Db\Profiler\Query;
 use BjyProfiler\Exception\RuntimeException;
-use Zend\Db\Adapter\Adapter;
-use Zend\Db\Sql\Sql;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\Sql\Sql;
 
-class ProfilerTest extends \PHPUnit_Framework_TestCase
+class ProfilerTest extends \PHPUnit\Framework\TestCase
 {
     /** @var Profiler */
     protected $profiler;
@@ -22,7 +22,7 @@ class ProfilerTest extends \PHPUnit_Framework_TestCase
     /** @var \ReflectionProperty */
     protected $profilesProperty;
 
-    protected function setUp()
+    protected function setUp():void
     {
         $this->profiler = new Profiler();
         $tgReflection = new \ReflectionClass(get_class($this->profiler));
@@ -135,7 +135,7 @@ class ProfilerTest extends \PHPUnit_Framework_TestCase
 
     public function testEndQueryRaiseException()
     {
-        $this->setExpectedException(RuntimeException::class, 'Query was not started.');
+        $this->expectException(RuntimeException::class, 'Query was not started.');
         $profiler = new Profiler();
         $profiler->endQuery();
     }

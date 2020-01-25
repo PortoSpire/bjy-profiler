@@ -4,15 +4,15 @@ namespace BjyProfilerTest;
 
 use BjyProfiler\Db\Adapter\ProfilingAdapter;
 use BjyProfiler\Db\Adapter\ProfilingAdapterFactory;
-use Zend\Db\Adapter\Adapter;
-use Zend\Db\Adapter\AdapterInterface;
-use Zend\Db\Sql\Sql;
-use Zend\Log\Logger;
-use Zend\Log\Writer\Mock;
-use Zend\Mvc\Service\ServiceManagerConfig;
-use Zend\ServiceManager\ServiceManager;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\AdapterInterface;
+use Laminas\Db\Sql\Sql;
+use Laminas\Log\Logger;
+use Laminas\Log\Writer\Mock;
+use Laminas\Mvc\Service\ServiceManagerConfig;
+use Laminas\ServiceManager\ServiceManager;
 
-class IntegrationTest extends \PHPUnit_Framework_TestCase
+class IntegrationTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
@@ -23,7 +23,7 @@ class IntegrationTest extends \PHPUnit_Framework_TestCase
     /** @var Mock */
     protected $writer;
 
-    protected function setUp()
+    protected function setUp():void
     {
         if (! extension_loaded('pdo_sqlite') || ! getenv('TESTS_ZEND_DB_ADAPTER_DRIVER_SQLITE_ENABLED')) {
             $this->markTestSkipped('I cannot test without the pdo_sqlite extension');
@@ -70,8 +70,8 @@ class IntegrationTest extends \PHPUnit_Framework_TestCase
         $statement->execute();
         // events[0] - Query started: CREATE TABLE
         // events[1] - Query finished
-        self::assertEquals('INSERT INTO "foo" ("id", "name") VALUES (:id, :name)', $this->writer->events[2]['extra']['sql']);
-        self::assertEquals($values, $this->writer->events[2]['extra']['parameters']);
+        self::assertEquals('INSERT INTO "foo" ("id", "name") VALUES (:c_0, :c_1)', $this->writer->events[2]['extra']['sql']);
+        self::assertEquals(['c_0'=>1,'c_1'=>'bar'], $this->writer->events[2]['extra']['parameters']);
         self::assertEquals('Query finished', $this->writer->events[3]['message']);
     }
 

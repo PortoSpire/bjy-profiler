@@ -6,7 +6,7 @@ use BjyProfiler\Db\Profiler\Profiler;
 use BjyProfiler\Db\Profiler\Query;
 use BjyProfiler\Exception\RuntimeException;
 
-class QueryTest extends \PHPUnit_Framework_TestCase
+class QueryTest extends \PHPUnit\Framework\TestCase
 {
     /** @var Query */
     protected $query;
@@ -16,7 +16,7 @@ class QueryTest extends \PHPUnit_Framework_TestCase
         return new Query($sql, $queryType, $parameters, $stack);
     }
 
-    protected function setUp()
+    protected function setUp():void
     {
         $this->query = $this->getQuery('SELECT * FROM foo', Profiler::SELECT);
     }
@@ -39,7 +39,7 @@ class QueryTest extends \PHPUnit_Framework_TestCase
 
     public function testEndRaiseExceptionWhenQueryTryFinishBeforeStart()
     {
-        $this->setExpectedException(RuntimeException::class, 'Query was not started.');
+        $this->expectException(RuntimeException::class, 'Query was not started.');
         $this->query->end();
     }
 
