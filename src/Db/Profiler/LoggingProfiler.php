@@ -7,7 +7,7 @@
 
 namespace BjyProfiler\Db\Profiler;
 
-use Zend\Log\Logger;
+use Laminas\Log\Logger;
 
 class LoggingProfiler extends Profiler
 {

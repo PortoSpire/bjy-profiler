@@ -3,8 +3,8 @@
 namespace BjyProfiler\Db\Profiler;
 
 use BjyProfiler\Exception\RuntimeException;
-use Zend\Db\Adapter\Profiler\ProfilerInterface;
-use Zend\Db\Adapter\StatementContainerInterface;
+use Laminas\Db\Adapter\Profiler\ProfilerInterface;
+use Laminas\Db\Adapter\StatementContainerInterface;
 
 class Profiler implements ProfilerInterface
 {

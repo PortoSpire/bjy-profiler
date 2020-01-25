@@ -8,7 +8,7 @@
 namespace BjyProfiler;
 
 use BjyProfiler\Db\Adapter\ProfilingAdapterFactory;
-use Zend\Db\Adapter\AdapterInterface;
+use Laminas\Db\Adapter\AdapterInterface;
 
 class ConfigProvider
 {
