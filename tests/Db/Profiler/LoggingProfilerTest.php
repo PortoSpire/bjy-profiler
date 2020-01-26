@@ -4,9 +4,9 @@ namespace BjyProfilerTest\Db\Profiler;
 
 use BjyProfiler\Db\Profiler\LoggingProfiler;
 use BjyProfiler\Db\Profiler\Profiler;
-use Zend\Log;
+use Laminas\Log;
 
-class LoggingProfilerTest extends \PHPUnit_Framework_TestCase
+class LoggingProfilerTest extends \PHPUnit\Framework\TestCase
 {
     /** @var Log\Writer\Mock */
     protected $writer;
@@ -20,7 +20,7 @@ class LoggingProfilerTest extends \PHPUnit_Framework_TestCase
     /** @var \ReflectionProperty */
     protected $enabledProperty;
 
-    protected function setUp()
+    protected function setUp():void
     {
         $this->writer = new Log\Writer\Mock();
         $this->logger = new Log\Logger();

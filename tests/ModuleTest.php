@@ -4,10 +4,10 @@ namespace BjyProfilerTest;
 
 use BjyProfiler\Db\Adapter\ProfilingAdapterFactory;
 use BjyProfiler\Module;
-use Zend\Db\Adapter\AdapterInterface;
-use Zend\ModuleManager\Feature\ConfigProviderInterface;
+use Laminas\Db\Adapter\AdapterInterface;
+use Laminas\ModuleManager\Feature\ConfigProviderInterface;
 
-class ModuleTest extends \PHPUnit_Framework_TestCase
+class ModuleTest extends \PHPUnit\Framework\TestCase
 {
     public function testInstanceOfConfigProviderInterface()
     {

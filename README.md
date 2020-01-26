@@ -1,7 +1,7 @@
 BjyProfiler
 ===========
 
-1.3.1-dev:
+Version 1.3.1
 
 Provides Laminas\Db adapters with extensions for database query profiling, as well as a profiler similar to ZF1's Zend\_Db\_Profiler.
 BJYoungblood ported much of this code from ZF1's Zend_Db.

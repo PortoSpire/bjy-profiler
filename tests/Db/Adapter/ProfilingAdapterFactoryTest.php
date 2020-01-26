@@ -5,11 +5,11 @@ namespace BjyProfilerTest\Db\Adapter;
 use BjyProfiler\Db\Adapter\ProfilingAdapter;
 use BjyProfiler\Db\Adapter\ProfilingAdapterFactory;
 use BjyProfiler\Db\Profiler\LoggingProfiler;
-use Zend\Db\Adapter\AdapterInterface;
-use Zend\Mvc\Service\ServiceManagerConfig;
-use Zend\ServiceManager\ServiceManager;
+use Laminas\Db\Adapter\AdapterInterface;
+use Laminas\Mvc\Service\ServiceManagerConfig;
+use Laminas\ServiceManager\ServiceManager;
 
-class ProfilingAdapterFactoryTest extends \PHPUnit_Framework_TestCase
+class ProfilingAdapterFactoryTest extends \PHPUnit\Framework\TestCase
 {
     protected $config = [
         'factories' => [
@@ -27,7 +27,7 @@ class ProfilingAdapterFactoryTest extends \PHPUnit_Framework_TestCase
      */
     protected $adapter;
 
-    protected function setUp()
+    protected function setUp():void
     {
         $this->serviceManager = new ServiceManager();
         (new ServiceManagerConfig($this->config))->configureServiceManager($this->serviceManager);
