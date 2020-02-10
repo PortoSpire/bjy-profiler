@@ -10,7 +10,7 @@
         "zdt",
         "laminas"
     ],
-    "homepage": "https://github.com/PortoSpire/BjyProfiler",
+    "homepage": "https://github.com/PortoSpire/bjy-profiler",
     "authors": [
         {
             "name": "Ben Youngblood",
@@ -29,7 +29,7 @@
         }
     ],
     "require": {
-        "php": "^5.5 || ^7.0",
+        "php": "^7.0",
         "laminas/laminas-servicemanager": "^3.0.3",
         "laminas/laminas-modulemanager": "^2.7",
         "laminas/laminas-db": "^2.7",
